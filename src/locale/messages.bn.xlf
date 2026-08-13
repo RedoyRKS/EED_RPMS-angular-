@@ -2,37 +2,17 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" target-language="bn" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="login.logoAlt" datatype="html">
-        <source>Government of the People&apos;s Republic of Bangladesh</source>
-        <target>গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</target>
-      </trans-unit>
-      <trans-unit id="login.title" datatype="html">
+      <trans-unit id="app.title" datatype="html">
         <source>EED RPMS</source>
         <target>ইইডি আরপিএমএস</target>
       </trans-unit>
-      <trans-unit id="login.subtitle" datatype="html">
-        <source>Education Engineering Department</source>
-        <target>শিক্ষা প্রকৌশল অধিদপ্তর</target>
+      <trans-unit id="app.welcome" datatype="html">
+        <source>Welcome to your Angular application with PrimeNG and i18n.</source>
+        <target>PrimeNG এবং i18n সহ আপনার Angular অ্যাপ্লিকেশনে স্বাগতম।</target>
       </trans-unit>
-      <trans-unit id="login.username" datatype="html">
-        <source>Username</source>
-        <target>ব্যবহারকারীর নাম</target>
-      </trans-unit>
-      <trans-unit id="login.usernameRequired" datatype="html">
-        <source>Username is required.</source>
-        <target>ব্যবহারকারীর নাম আবশ্যক।</target>
-      </trans-unit>
-      <trans-unit id="login.password" datatype="html">
-        <source>Password</source>
-        <target>পাসওয়ার্ড</target>
-      </trans-unit>
-      <trans-unit id="login.passwordRequired" datatype="html">
-        <source>Password is required.</source>
-        <target>পাসওয়ার্ড আবশ্যক।</target>
-      </trans-unit>
-      <trans-unit id="login.submit" datatype="html">
-        <source>Sign In</source>
-        <target>সাইন ইন</target>
+      <trans-unit id="app.getStarted" datatype="html">
+        <source>Get Started</source>
+        <target>শুরু করুন</target>
       </trans-unit>
     </body>
   </file>
