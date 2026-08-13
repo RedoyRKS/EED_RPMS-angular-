@@ -17,12 +17,6 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {
-        "sourceLocale": "en",
-        "locales": {
-          "bn": "src/locale/messages.bn.xlf"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -34,10 +28,19 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/core/i18n/common",
+                "output": "assets/i18n/common"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/pages/login/i18n",
+                "output": "assets/i18n/login"
               }
             ],
-            "styles": ["src/styles.scss"],
-            "polyfills": ["@angular/localize/init"]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -49,8 +52,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "12kB",
+                  "maximumError": "20kB"
                 }
               ],
               "outputHashing": "all"
@@ -59,9 +62,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "bn": {
-              "localize": ["bn"]
             }
           },
           "defaultConfiguration": "production"
@@ -74,9 +74,6 @@
             },
             "development": {
               "buildTarget": "eed-rpms:build:development"
-            },
-            "bn": {
-              "buildTarget": "eed-rpms:build:bn"
             }
           },
           "defaultConfiguration": "development"

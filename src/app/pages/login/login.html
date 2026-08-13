@@ -1,0 +1,73 @@
+@if (ready()) {
+  <section class="login">
+    <div class="login__bg" aria-hidden="true"></div>
+    <div class="login__shade" aria-hidden="true"></div>
+
+    <div class="login__content">
+      <header class="login__brand">
+        <img class="login__logo" src="images/eed-logo.png" alt="EED" width="80" height="80" />
+        <h1>{{ 'login.brand' | translate }}</h1>
+        <p>{{ 'login.tagline' | translate }}</p>
+      </header>
+
+      <div class="login__sheet">
+        <div class="login__sheet-top">
+          <p class="login__welcome">{{ 'login.title' | translate }}</p>
+          <div class="login__lang" role="group" aria-label="Language">
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="i18n.locale() === 'en'"
+              (click)="setLocale('en')"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="i18n.locale() === 'bn'"
+              (click)="setLocale('bn')"
+            >
+              বাং
+            </button>
+          </div>
+        </div>
+
+        <p class="login__subtitle">{{ 'login.subtitle' | translate }}</p>
+
+        <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="field">
+            <label for="username">{{ 'login.username' | translate }}</label>
+            <input
+              pInputText
+              id="username"
+              formControlName="username"
+              autocomplete="username"
+              class="w-full"
+            />
+          </div>
+
+          <div class="field">
+            <label for="password">{{ 'login.password' | translate }}</label>
+            <p-password
+              inputId="password"
+              formControlName="password"
+              [feedback]="false"
+              [toggleMask]="true"
+              autocomplete="current-password"
+              styleClass="w-full"
+              inputStyleClass="w-full"
+            />
+          </div>
+
+          <p-button
+            type="submit"
+            styleClass="login__submit w-full"
+            [label]="'login.submit' | translate"
+            [loading]="loading()"
+          />
+        </form>
+      </div>
+    </div>
+  </section>
+}

@@ -1,0 +1,261 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color-scheme: light;
+}
+
+.login {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  animation: fade-in 0.55s ease both;
+}
+
+.login__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('/images/login-bg.png') center / cover no-repeat;
+  transform: scale(1.02);
+}
+
+.login__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(15, 118, 110, 0.18), transparent 42%),
+    linear-gradient(120deg, rgba(3, 22, 30, 0.55) 0%, rgba(6, 42, 54, 0.42) 45%, rgba(4, 28, 36, 0.58) 100%);
+}
+
+.login__content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.login__brand {
+  color: #f8fafc;
+  max-width: 34rem;
+  animation: rise 0.7s ease 0.08s both;
+}
+
+.login__logo {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  margin-bottom: 1.1rem;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.3));
+}
+
+.login__brand h1 {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', sans-serif;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.login__brand p {
+  margin: 1rem 0 0;
+  max-width: 28rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(241, 245, 249, 0.92);
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.login__sheet {
+  width: min(100%, 26.5rem);
+  justify-self: end;
+  padding: 1.75rem 1.6rem 1.6rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(22px) saturate(1.35);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  color: #0f172a;
+  animation: rise 0.7s ease 0.16s both;
+}
+
+.login__sheet-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.login__welcome {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.login__lang {
+  display: inline-flex;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: rgba(248, 250, 252, 0.88);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.lang-btn.active {
+  background: rgba(15, 92, 99, 0.95);
+  color: #fff;
+}
+
+.login__subtitle {
+  margin: 0 0 1.5rem;
+  color: rgba(241, 245, 249, 0.86);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(248, 250, 252, 0.92);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.field :is(.p-password),
+:host ::ng-deep .field .p-password {
+  display: block;
+  width: 100%;
+}
+
+.field :is(.p-inputtext, .p-password-input),
+:host ::ng-deep .field .p-password-input {
+  display: block;
+  width: 100% !important;
+  height: 2.85rem !important;
+  min-height: 2.85rem !important;
+  max-height: 2.85rem !important;
+  box-sizing: border-box !important;
+  padding: 0.65rem 0.9rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.25 !important;
+  border-radius: 0.7rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.78) !important;
+  color: #0f172a !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+:host ::ng-deep .field .p-password {
+  position: relative;
+}
+
+:host ::ng-deep .field .p-password .p-password-toggle-mask-icon,
+:host ::ng-deep .field .p-password .p-iconfield,
+:host ::ng-deep .field .p-password [data-pc-section='maskicon'],
+:host ::ng-deep .field .p-password [data-pc-section='unmaskicon'] {
+  right: 0.75rem;
+}
+
+:host ::ng-deep .field .p-password-input {
+  padding-right: 2.5rem !important;
+}
+
+.field :is(.p-inputtext, .p-password-input):enabled:focus,
+:host ::ng-deep .field .p-password-input:enabled:focus {
+  border-color: rgba(20, 184, 166, 0.85) !important;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.22) !important;
+}
+
+:host ::ng-deep .login__submit {
+  margin-top: 0.3rem;
+  min-height: 2.9rem;
+  border-radius: 0.75rem !important;
+  font-weight: 650;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .login__content {
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+
+  .login__brand {
+    text-align: center;
+    justify-self: center;
+  }
+
+  .login__logo {
+    margin-inline: auto;
+  }
+
+  .login__brand p {
+    margin-inline: auto;
+  }
+
+  .login__sheet {
+    justify-self: center;
+  }
+}
