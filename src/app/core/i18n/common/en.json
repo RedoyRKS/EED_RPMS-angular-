@@ -1,3 +1,11 @@
 {
-  "app.title": "EED RPMS"
+  "app.title": "EED RPMS",
+  "nav.home": "Home",
+  "nav.eiinList": "EIIN List",
+  "nav.instituteSearch": "Institute Search",
+  "nav.eiinSearch": "EIIN Search",
+  "nav.fundDistribution": "Fund Distribution",
+  "nav.profile": "Profile",
+  "nav.logout": "Logout",
+  "page.comingSoon": "This page will be available soon."
 }

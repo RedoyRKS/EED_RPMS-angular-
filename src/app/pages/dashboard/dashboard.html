@@ -1,0 +1,72 @@
+<div class="dash">
+  <div class="dash__bg" aria-hidden="true"></div>
+
+  <section class="hero">
+    <div class="hero__copy">
+      <p class="hero__kicker">{{ 'dash.welcome' | translate }}</p>
+      <h1>{{ 'app.title' | translate }}</h1>
+      <h2>{{ 'dash.subtitle' | translate }}</h2>
+      <p class="hero__text">{{ 'dash.intro' | translate }}</p>
+    </div>
+  </section>
+
+  <div class="feature-grid">
+    <button type="button" class="feature feature--green" (click)="setArea('program')">
+      <span class="feature__icon"><i class="pi pi-building"></i></span>
+      <span class="feature__copy">
+        <strong>{{ 'dash.program' | translate }}</strong>
+        <em>{{ 'dash.programBn' | translate }}</em>
+        <small>{{ 'dash.programDesc' | translate }}</small>
+      </span>
+      <span class="feature__go" (click)="open('/program-management'); $event.stopPropagation()">
+        <i class="pi pi-arrow-right"></i>
+      </span>
+    </button>
+
+    <button type="button" class="feature feature--blue" (click)="setArea('progress')">
+      <span class="feature__icon"><i class="pi pi-chart-line"></i></span>
+      <span class="feature__copy">
+        <strong>{{ 'dash.progress' | translate }}</strong>
+        <em>{{ 'dash.progressBn' | translate }}</em>
+        <small>{{ 'dash.progressDesc' | translate }}</small>
+      </span>
+      <span class="feature__go" (click)="open('/progress-management'); $event.stopPropagation()">
+        <i class="pi pi-arrow-right"></i>
+      </span>
+    </button>
+  </div>
+
+  <p-card styleClass="modules-card">
+    <header class="modules__head">
+      <span class="modules__badge"><i class="pi pi-th-large"></i></span>
+      <div>
+        <h3>
+          {{ (area() === 'progress' ? 'dash.progressModules' : 'dash.programModules') | translate }}
+        </h3>
+        <p>
+          {{
+            (area() === 'progress' ? 'dash.progressModulesBn' : 'dash.programModulesBn') | translate
+          }}
+        </p>
+      </div>
+    </header>
+
+    <div class="module-grid">
+      @for (item of modules(); track item.path) {
+        <button
+          type="button"
+          class="module"
+          [class]="'module module--' + item.tone"
+          (click)="open(item.path)"
+        >
+          <span class="module__icon"><i [class]="item.icon"></i></span>
+          <span class="module__copy">
+            <strong>{{ item.titleKey | translate }}</strong>
+            <em>{{ item.bnKey | translate }}</em>
+          </span>
+          <span class="module__go"><i class="pi pi-arrow-right"></i></span>
+        </button>
+      }
+    </div>
+  </p-card>
+</div>

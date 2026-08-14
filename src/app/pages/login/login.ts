@@ -1,10 +1,12 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Button } from 'primeng/button';
 import { InputText } from 'primeng/inputtext';
 import { Password } from 'primeng/password';
 import { I18nService, Locale } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
+import { SessionService } from '../../core/session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +16,8 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
 })
 export class Login implements OnInit {
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
+  private readonly session = inject(SessionService);
   protected readonly i18n = inject(I18nService);
 
   protected readonly ready = signal(false);
@@ -41,6 +45,10 @@ export class Login implements OnInit {
     }
 
     this.loading.set(true);
-    window.setTimeout(() => this.loading.set(false), 500);
+    this.session.signIn(this.form.controls.username.value.trim());
+    window.setTimeout(() => {
+      this.loading.set(false);
+      void this.router.navigateByUrl('/dashboard');
+    }, 400);
   }
 }

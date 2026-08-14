@@ -38,6 +38,11 @@
                 "glob": "**/*",
                 "input": "src/app/pages/login/i18n",
                 "output": "assets/i18n/login"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/pages/dashboard/i18n",
+                "output": "assets/i18n/dashboard"
               }
             ],
             "styles": ["src/styles.scss"]

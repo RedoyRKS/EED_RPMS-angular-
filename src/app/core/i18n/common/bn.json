@@ -1,3 +1,11 @@
 {
-  "app.title": "ইইডি আরপিএমএস"
+  "app.title": "ইইডি আরপিএমএস",
+  "nav.home": "হোম",
+  "nav.eiinList": "ইআইআইএন তালিকা",
+  "nav.instituteSearch": "প্রতিষ্ঠান অনুসন্ধান",
+  "nav.eiinSearch": "ইআইআইএন অনুসন্ধান",
+  "nav.fundDistribution": "তহবিল বিতরণ",
+  "nav.profile": "প্রোফাইল",
+  "nav.logout": "লগআউট",
+  "page.comingSoon": "এই পাতা শীঘ্রই উপলব্ধ হবে।"
 }

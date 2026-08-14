@@ -1,0 +1,44 @@
+@if (ready()) {
+  <div class="shell">
+    <header class="topbar">
+      <a routerLink="/dashboard" class="brand">
+        <img src="images/eed-logo.png" alt="EED" width="40" height="40" />
+        <span>{{ 'app.title' | translate }}</span>
+      </a>
+
+      <nav class="nav">
+        @for (item of navItems; track item.path) {
+          <a class="nav__link" [routerLink]="item.path" [class.active]="isActive(item.path)">
+            <i [class]="item.icon"></i>
+            <span>{{ item.labelKey | translate }}</span>
+          </a>
+        }
+      </nav>
+
+      <div class="topbar__actions">
+        <button type="button" class="profile" (click)="toggleProfile($event)">
+          <p-avatar
+            [label]="username().charAt(0).toUpperCase() || 'U'"
+            shape="circle"
+            styleClass="profile__avatar"
+          />
+          <span>{{ username() || 'User' }}</span>
+          <i class="pi pi-chevron-down"></i>
+        </button>
+        <p-menu #profileMenu [model]="profileItems" [popup]="true" appendTo="body" />
+
+        <p-button
+          [label]="'nav.logout' | translate"
+          icon="pi pi-sign-out"
+          severity="danger"
+          [outlined]="true"
+          (onClick)="logout()"
+        />
+      </div>
+    </header>
+
+    <main class="shell__main">
+      <router-outlet />
+    </main>
+  </div>
+}
