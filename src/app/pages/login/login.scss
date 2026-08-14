@@ -34,15 +34,18 @@
   z-index: 2;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  padding: clamp(1.5rem, 5vw, 4rem);
+  gap: clamp(2rem, 6vw, 5rem);
+  width: min(100%, 86rem);
+  margin-inline: auto;
+  padding: clamp(1.75rem, 5vw, 4.5rem) clamp(2rem, 7vw, 6rem);
 }
 
 .login__brand {
   color: #f8fafc;
-  max-width: 34rem;
+  max-width: 32rem;
+  justify-self: start;
   animation: rise 0.7s ease 0.08s both;
 }
 
