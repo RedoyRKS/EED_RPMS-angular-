@@ -115,3 +115,5 @@ export class Dashboard implements OnInit {
     this.area.set(area);
   }
 }
+
+// ok.
